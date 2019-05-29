@@ -1,0 +1,25 @@
+<html ng-app="">
+<head>
+
+<title>Data Binding</title>
+<script src="js/angular.min.js"></script>
+<style type="text/css">
+	body
+	{
+		background-color: {{color}};
+}
+ </style>
+</head>
+<body>
+	Color:<input type="text" ng-model="color"  name=""> 
+	<p>js Tutorial!!</p>
+	<select ng-model="color">
+		<option>red</option>
+		<option>green</option>
+		<option>blue</option>
+		<option>cyan</option>
+	</select>
+
+</body>
+
+</html>
