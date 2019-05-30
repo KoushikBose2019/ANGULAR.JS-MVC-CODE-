@@ -1,0 +1,21 @@
+<html ng-app="ar">
+<head>
+	<title> Json with an  Array</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script src="js/custom2.js"></script>
+</head>
+<body>
+	<div ng-controller="mycontroller">
+		<ol>
+			<li ng-repeat="s in city">{{s}}</li>
+		</ol>
+		<ol>
+			<li ng-repeat="s1 in details">{{ "name : "+ s1.name + "city: "+ s1.city}}</li>
+
+		</ol>
+
+ 	</div>
+
+</body>
+
+</html>
