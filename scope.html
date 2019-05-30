@@ -1,0 +1,20 @@
+<html ng-app="js">
+<head>
+<title>Scope  in Angular.js!!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script src="js/custom.js"></script>
+</head>
+<body>
+<div ng-controller="mycontroller">
+name:<input type="text" ng-model="name" name="">
+city:<input type="text" ng-model="city" name="">
+<br>
+Name:{{"name"}}
+<br>
+City:{{"city"}}
+<p>
+	{{detail()}}
+</p>
+</div>
+</body>
+</html>
