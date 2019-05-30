@@ -1,0 +1,28 @@
+<html ng-app="ft">
+<head>
+<title>
+RootScope Object in angular.js
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script src="js/Custom1.js"></script>
+</head>
+<body>
+	<div ng-controller="mynewController">
+	name:<input type="text" ng-model="name" name=" ">
+	country:<input type="text" ng-model="Country" name=" "><br>
+		
+	<p>
+		name is :{{name}}</p>
+		<p>country is:{{country}}</p>
+		
+	
+	</div>
+		<p>
+		{{name}}
+	</p>
+	<p>
+		{{maths()}}
+	</p>
+	
+	</body>
+</html>
