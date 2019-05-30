@@ -1,0 +1,25 @@
+<html ng-app="">
+<head>
+   <title>array in angular.js</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-init="detail=['name','age','city','address']">
+
+	{{detail}}
+	<p ng-repeat="s in detail">
+		{{s}}
+		{{s[0]}}
+	</p>
+	<div ng-init="marks=[14,24,44,54]">
+	Students marks<br>
+	Subject 1: {{marks[0]}}<br>
+	Subject 2:{{marks[1]}}<br>
+	Subject 3:{{marks[2]}}<br>
+	Subject 4:{{marks[3]}}
+</div>
+
+</body>
+
+
+</html>
