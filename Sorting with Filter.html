@@ -1,0 +1,12 @@
+<html ng-app="ar">
+<head><title>Sorting in Filter in Angular.Js</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script src="js/Custom1.js"></script>
+</head>
+<body>
+<div ng-controller="mycontroller">
+	<li ng-repeat="s in colors|orderBy: s ">{{s}}</li>
+	<li ng-repeat="person in persons|orderBy:person">{{person}}</li>
+
+</div>
+	</body>
