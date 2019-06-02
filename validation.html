@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>validation in angular.js</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script> 
+</head>
+<body ng-app>
+	<from name="studentFrom">
+		firstname:<input type="text" name="firstname" ng-minlength="4" ng-maxlength="14" ng-model="student.firstname" ng-required="true"/><br>
+		<span ng-show="studentForm.firstName.$touched && studentForm.firstName.$error.required">First name is required.</span><br /><br />
+		lastname:<input type="text"name="lastname" ng-minlength="4" ng-maxlength="14" ng-model="student.lastname" ng-required="true"/><br>
+		 <span ng-show="studentForm.lastName.$touched && studentForm.lastName.$error.minlength">min 3 chars.</span>
+            <span ng-show="studentForm.lastName.$touched && studentForm.lastName.$error.maxlength">Max 10 chars.</span><br /><br />
+		emailid:<input type="email"  name= "email" id="email"  ng-model=student.email ng-required="true"><br>
+		<span ng-show="studentForm.email.$touched && studentForm.email.$error.email">Please enter valid email id.</span><br /><br />
+        <input type="Submit" value="submit"/>
+    </from>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
