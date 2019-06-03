@@ -1,0 +1,71 @@
+<html ng-app="studentApp">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js">
+	</script>
+	</head>
+<body ng-controller="studentcontroller">
+	<h1>Student Information</h1>
+	<from ng-submit="submitStudentForm()">
+	First Name:<input type="text" id="firstName" ng-model="student.firstName"/></br>
+	Last Name:<input type="text" id="lastName" ng-model="student.lastName"/></br>
+	D.O.B: <input type="text" id="dob" ng-model="student.dob"/></br>
+	Gender:<select id="gender"ng-model="student.gender">
+		   <option value="....select....">....select....</option>
+           <option value="male">Male</option>
+           <option value="female">Female</option>
+           </select></br>
+           <br>
+ <span>Training Type:</span><br>
+ <input type="radio"value="online"name="training"ng-model="student.trainingType"/>online<br/>
+ <input type="radio" value="online" name="training" ng-model="student.Training Type"/>offline<br/>
+ <br>
+ <span>Subject</span><br/>
+ <input type="checkbox" ng-model="student.Subject"/>math<br/>
+ <input type="checkbox" ng-model="student.Subject"/>physics<br/>
+ <input type="checkbox" ng-model="student.Subject" />biology<br/>
+ <input type="checkbox" ng-model="student.Subject" />english<br/> 
+ <br>
+<input type="submit" value="submit"/>
+<input type="reset" ng-click="resetform()" value="reset"/><br/> 
+</from>
+<script>
+var studentapp=angular.module("studentApp",[]);
+
+studentapp.controller("studentcontroller",function($scope,$http){
+$scope.originalStudent={
+     firstname:"arnok",
+     lastname:"gosh",
+     dob: new Date('01/31/1980'),
+     gender:"male",
+     trainingType:"online",
+     math:true,
+     physics:true,
+     biology:false,
+     english:true
+};
+$scope.student=angular.copy($scope.originalStudent);
+$scope.submitStudentForm=function(){
+	$scope.student=angular.copy($scope.originalStudent);
+    
+    var onsuccess=function(data,status,header,config){
+    	alert('student saved successfully');
+
+    };
+    var onerror=function(data,status,header,config){
+    	alert('error occured');
+    }
+    $http.post('/student/Angular.js code',{student:$scope.student})
+         .success(onsuccess);
+         .error(onerror);
+
+
+
+};
+$scope.resetform=function(){
+	$scope.student=angular.copy($scope.originalStudent);
+};
+});
+
+</script>
+</body>
+</html>
